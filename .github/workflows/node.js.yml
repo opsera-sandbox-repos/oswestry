@@ -9,7 +9,7 @@ on:
   pull_request:
     branches: [ main ]
 env:
-  opsera-tags: node-actions, node-actions2
+  opsera-tags: node-actions
     
 
 jobs:
