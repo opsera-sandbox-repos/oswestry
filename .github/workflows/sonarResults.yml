@@ -15,9 +15,10 @@ jobs:
     name: SonarQube Trigger
     runs-on: ubuntu-latest
     steps:
-    - run: echo "Sonar Results are being fetched. please wait.. "
-    - run: result='curl --request GET -u "${{ secrets.SONARQUBE_TOKEN }}":"${{ secrets.SONARQUBE_HOST }}" --url ${{ secrets.SONARQUBE_HOST }}api/measures/component?component=oswestry&metricKeys=bugs,vulnerabilities,security_hotspots'
-    - run: echo $result
+    - run: | 
+        echo 'JSON_RESPONSE<<EOF' >> $GITHUB_ENV
+        curl --request GET -u "${{ secrets.SONARQUBE_TOKEN }}":"${{ secrets.SONARQUBE_HOST }}" --url ${{ secrets.SONARQUBE_HOST }}api/measures/component?component=oswestry&metricKeys=bugs,vulnerabilities,security_hotspots >> $GITHUB_ENV 
+        echo $GITHUB_ENV
 
  
 
