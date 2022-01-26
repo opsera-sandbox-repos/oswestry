@@ -15,9 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: | 
-       curl -X GET \
-       -H "Authorization: ${{ secrets.SONARQUBE_TOKEN }}" \
-       ${{ secrets.SONARQUBE_HOST }}/api/measures/component?component=oswestry&metricKeys=bugs,vulnerabilities,security_hotspots
+       curl -X GET -H "Authorization: ${{ secrets.SONARQUBE_TOKEN }}" ${{ secrets.SONARQUBE_HOST }}/api/measures/component?component=oswestry&metricKeys=bugs,vulnerabilities,security_hotspots
 
  
 
