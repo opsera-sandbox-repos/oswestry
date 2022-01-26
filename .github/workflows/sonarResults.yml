@@ -15,9 +15,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: echo "${{ secrets.SONARQUBE_HOST }}"
-    - run: curl --request GET -u "${{ secrets.SONARQUBE_HOST }}":"${{ secrets.SONARQUBE_TOKEN }}" ${{ secrets.SONARQUBE_HOST }}/api/measures/component?component=oswestry&metricKeys=bugs,vulnerabilities,security_hotspots
-
-
- 
-
-
+    - run: curl --write-out -u "${{ secrets.SONARQUBE_HOST }}":"${{ secrets.SONARQUBE_TOKEN }}" ${{ secrets.SONARQUBE_HOST }}/api/measures/component?component=oswestry&metricKeys=bugs,vulnerabilities,security_hotspots --output output.json
