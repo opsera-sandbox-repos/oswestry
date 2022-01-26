@@ -14,4 +14,4 @@ jobs:
     name: SonarQube Trigger
     runs-on: ubuntu-latest
     steps:
-    - run: curl -H 'Content-Type:application/json' -u "${{ secrets.SONARQUBE_HOST }}":"${{ secrets.SONARQUBE_TOKEN }}" ${{ secrets.SONARQUBE_HOST }}/api/measures/component?component=oswestry&metricKeys=bugs,vulnerabilities,security_hotspots
+    - run: curl -H "Content-Type:application/json" -u "${{ secrets.SONARQUBE_HOST }}":"${{ secrets.SONARQUBE_TOKEN }}" ${{ secrets.SONARQUBE_HOST }}api/measures/component?component=oswestry&metricKeys=bugs,vulnerabilities,security_hotspots
