@@ -17,7 +17,7 @@ jobs:
     - run: | 
        curl -X GET \
        -H "Authorization: ${{ secrets.SONARQUBE_TOKEN }}" \
-       ${{ secrets.SONARQUBE_HOST }}api/measures/component?component=oswestry&metricKeys=bugs,vulnerabilities,security_hotspots
+       ${{ secrets.SONARQUBE_HOST }}/api/measures/component?component=oswestry&metricKeys=bugs,vulnerabilities,security_hotspots
 
  
 
