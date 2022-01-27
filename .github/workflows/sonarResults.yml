@@ -15,4 +15,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: ../scripts/sonar-result.sh
-
