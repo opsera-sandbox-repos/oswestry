@@ -50,18 +50,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run : sudo chmod 777 ./scripts/sonar-results.sh 
-    - run: ./scripts/sonar-results.sh
+    - run: sonarResult=$(curl -v -H "Content-Type:application/json" -u "${{ secrets.SONARQUBE_TOKEN }}":"${{ secrets.SONARQUBE_HOST }}/api/measures/component?component=oswestry&metricKeys=new_bugs,new_vulnerabilities,new_security_hotspots")
+#     - run : sudo chmod 777 ./scripts/sonar-results.sh 
+#     - run: ./scripts/sonar-results.sh
   
-  actionsMetadata:
-    name: Fetching Actions Metadata
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-#     - run : sudo chmod 777 ./scripts/metadata.sh 
-#     - run: ./scripts/metadata.sh
-    - name: replacing  
-      run: |
-        cat ${{ github.workspace }}/data/output.json | jq '(.workflow_metadata.run_id) |= ${{ github.run_id }}'
-    - run: cat ${{ github.workspace }}/data/output.json
+#   actionsMetadata:
+#     name: Fetching Actions Metadata
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v2
+# #     - run : sudo chmod 777 ./scripts/metadata.sh 
+# #     - run: ./scripts/metadata.sh
+#     - name: replacing  
+#       run: |
+#         cat ${{ github.workspace }}/data/output.json | jq '(.workflow_metadata.run_id) |= ${{ github.run_id }}'
+#     - run: cat ${{ github.workspace }}/data/output.json
 
