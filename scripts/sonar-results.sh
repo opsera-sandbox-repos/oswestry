@@ -7,4 +7,4 @@
 #         -header "Authorization: Bearer fd88fe29c3526cdd8fe50ab1ad105d5c073f79c8"
 #         -url "https://sqprod.opsera.io/api/measures/component?component=oswestry&metricKeys=bugs,vulnerabilities,security_hotspots"
 
-curl -v -H "Content-Type: application/json" -H "Authorization: Bearer fd88fe29c3526cdd8fe50ab1ad105d5c073f79c8" --request GET "https://sqprod.opsera.io/api/measures/component?component=Azure-service&metricKeys=new_bugs,new_vulnerabilities,new_security_hotspots"
+curl -v -H "Content-Type: application/json" -H "Authorization: Bearer fd88fe29c3526cdd8fe50ab1ad105d5c073f79c8" --request GET "https://sqprod.opsera.io/api/measures/component?component=oswestry&metricKeys=new_bugs,new_vulnerabilities,new_security_hotspots"
