@@ -7,6 +7,6 @@ echo $sonarResult
 echo "appending metadata"
 metadata="{"workflowId":"18670092", "runId":"1755477395", "applicationId":"1231451"}"
 echo $metadata
-sonarResult+=",metaData:"+"$metadata"
+sonarResult+=",{metaData:$metadata}"
 echo "printing results after appending metadata" 
 echo $sonarResult
