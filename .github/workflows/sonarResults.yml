@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run : sudo chmod 777 ./scripts/sonar-results.sh 
-    - run: ./scripts/sonar-results.sh $GITHUB_RUN_ID $GITHUB_WORKFLOW
+    - run: ./scripts/sonar-results.sh $GITHUB_RUN_ID $GITHUB_WORKFLOW $GITHUB_JOB $GITHUB_RUN_ATTEMPT $GITHUB_RUN_NUMBER
 #       env: 
 #         run_id: ${{ github.run_id }} 
     
