@@ -43,9 +43,6 @@ jobs:
         host: ${{ secrets.SONARQUBE_HOST }}
         login: ${{ secrets.SONARQUBE_TOKEN }}
         on: push
-    - run: |
-        curl --request GET -u "${{ secrets.SONARQUBE_TOKEN }}" --url ${{ secrets.SONARQUBE_HOST }}api/measures/component?component=oswestry&metricKeys=bugs,vulnerabilities,security_hotspots
-
  
 
 
