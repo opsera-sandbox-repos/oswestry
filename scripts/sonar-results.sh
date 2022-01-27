@@ -5,4 +5,4 @@
 curl --request GET -header "Content-Type: application/json" \
         -header "Accept: application/json"  \
         -header "Authorization: Bearer fd88fe29c3526cdd8fe50ab1ad105d5c073f79c8"
-        --url "https://sqprod.opsera.io/api/measures/component?component=oswestry&metricKeys=bugs,vulnerabilities,security_hotspots"
+        -url "https://sqprod.opsera.io/api/measures/component?component=oswestry&metricKeys=bugs,vulnerabilities,security_hotspots"
