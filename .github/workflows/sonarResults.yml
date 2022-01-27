@@ -15,5 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run : sudo chmod 777 ./scripts/metadata.sh 
-    - run: ./scripts/metadata.sh
+#     - run : sudo chmod 777 ./scripts/metadata.sh 
+#     - run: ./scripts/metadata.sh
+    - run: echo ${{ github_run_id }}
