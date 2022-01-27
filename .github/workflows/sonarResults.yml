@@ -18,5 +18,5 @@ jobs:
 #     - run : sudo chmod 777 ./scripts/metadata.sh 
 #     - run: ./scripts/metadata.sh
     - run: echo ${{ github.run_id }}
-    - run: echo /${{ github.repository }}/data/output.json
-    - run: jq '.workflow_metadata.run_id' /${{ github.repository }}/data/output.json
+    - run: cat /github/workspace/data/output.json
+#     - run: jq '.workflow_metadata.run_id' /${{ github.repository }}/data/output.json
