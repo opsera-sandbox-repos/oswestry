@@ -5,7 +5,7 @@ sonarResult=$(curl -v -H "Content-Type: application/json" -u "9b55f230d43dae27f6
 echo "printing results..." 
 echo $sonarResult
 echo "appending metadata"
-metadata='{"workflowId":"18670092", "runId":"1755477395", "applicationId":"1231451"}'
+metadata="{"workflowId":"18670092", "runId":"1755477395", "applicationId":"1231451"}"
 $metadata >> sonarResult
 echo "printing results after appending metadata" 
 echo $sonarResult
