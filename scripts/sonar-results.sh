@@ -9,13 +9,13 @@ workflow_metadata=$(curl -H "Accept: application/vnd.github.v3+json" https://api
 echo "printing workflow metadata" 
 echo $workflow_metadata
 
-echo "appending metadata"
+# echo "appending metadata"
 
-# User can make a REST API call to Github to fetch the workflow metadata
-metadata="{"run_id":$1, "workflow_name":$2, "job_name":$3, "run_attempt":$4, "run_count":$5, "action_id":$6}"
-# metadata="{"workflowId":"18670092", "runId":"1755477395", "applicationId":"1231451"}"
-echo $metadata
+# # User can make a REST API call to Github to fetch the workflow metadata
+# metadata="{"run_id":$1, "workflow_name":$2, "job_name":$3, "run_attempt":$4, "run_count":$5, "action_id":$6}"
+# # metadata="{"workflowId":"18670092", "runId":"1755477395", "applicationId":"1231451"}"
+# echo $metadata
 
-sonarResult+=",{"metaData":$metadata}"
-echo "printing results after appending metadata" 
-echo $sonarResult
+# sonarResult+=",{"metaData":$metadata}"
+# echo "printing results after appending metadata" 
+# echo $sonarResult
