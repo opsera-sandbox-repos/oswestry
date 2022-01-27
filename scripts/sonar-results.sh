@@ -8,7 +8,7 @@ echo $sonarResult
 workflow_metadata=$(curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/apat35/oswestry/actions/runs)
 # workflow_id=$(jq -r '.workflow[0].workflow_id' <<< "$workflow_metadata")
 # workflow_id=$(jq -r '.workflow.[].workflow_id' "$workflow_metadata")
-workflow_id=$(jq '.workflow.[].workflow_id' $workflow_metadata)
+workflow_id=$(jq '.workflow[].workflow_id' $workflow_metadata)
 echo "printing workflowID" 
 echo $workflow_id
 
@@ -23,3 +23,6 @@ echo $workflow_id
 # sonarResult+=",{"metaData":$metadata}"
 # echo "printing results after appending metadata" 
 # echo $sonarResult
+
+
+# jq '.categories[][].notificationURL' bundle.json
