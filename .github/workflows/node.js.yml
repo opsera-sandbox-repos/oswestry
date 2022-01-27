@@ -50,9 +50,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: sonarResult=$(curl -v -H "Content-Type:application/json" -u "${{ secrets.SONARQUBE_TOKEN }}":"${{ secrets.SONARQUBE_HOST }}/api/measures/component?component=oswestry&metricKeys=new_bugs,new_vulnerabilities,new_security_hotspots")
-#     - run : sudo chmod 777 ./scripts/sonar-results.sh 
-#     - run: ./scripts/sonar-results.sh
+    - run : sudo chmod 777 ./scripts/sonar-results.sh 
+    - run: ./scripts/sonar-results.sh ${{ github.run_id }} 
   
 #   actionsMetadata:
 #     name: Fetching Actions Metadata
