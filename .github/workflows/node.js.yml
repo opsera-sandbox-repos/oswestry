@@ -58,5 +58,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run : sudo chmod 777 ./scripts/metadata.sh 
-    - run: ./scripts/metadata.sh
+#     - run : sudo chmod 777 ./scripts/metadata.sh 
+#     - run: ./scripts/metadata.sh
+    - name: replacing  
+      run: |
+        cat ${{ github.workspace }}/data/output.json | jq '(.workflow_metadata.run_id) |= ${{ github.run_id }}'
+    - run: cat ${{ github.workspace }}/data/output.json
+
