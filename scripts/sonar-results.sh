@@ -1,7 +1,5 @@
 #!/bin/bash
 echo "printing run ID"
-echo $1
-run_id: $1
 echo $run_id
 
 sonarResult=$(curl -v -H "Content-Type: application/json" -u "9b55f230d43dae27f6965acbb9ff622f70f3baed": "https://sqprod.opsera.io/api/measures/component?component=oswestry&metricKeys=new_bugs,new_vulnerabilities,new_security_hotspots")
