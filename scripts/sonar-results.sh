@@ -10,13 +10,10 @@ echo "workflow_metadata"
 
 # echo "appending metadata"
 # # User can make a REST API call to Github to fetch the workflow metadata
-# metadata="{"run_id":$1, "workflow_name":$2, "job_name":$3, "run_attempt":$4, "run_count":$5, "action_id":$6}"
+metadata="{"run_id":$1, "workflow_name":$2, "job_name":$3, "run_attempt":$4, "run_count":$5, "action_id":$6}"
 
-# echo $metadata
+echo $metadata
 
-# sonarResult+=",{"metaData":$metadata}"
-# echo "printing results after appending metadata" 
-# echo $sonarResult
-
-
-# jq '.categories[][].notificationURL' bundle.json
+sonarResult+=",{"metaData":$metadata}"
+echo "printing results after appending metadata" 
+echo $sonarResult
