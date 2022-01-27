@@ -9,7 +9,7 @@ workflow_metadata=$(curl -H "Accept: application/vnd.github.v3+json" https://api
 # workflow_id=$(jq -r '.workflow[0].workflow_id' <<< "$workflow_metadata")
 # workflow_id=$(jq -r '.workflow.[].workflow_id' "$workflow_metadata")
 # workflow_id=$(jq '.workflow[].workflow_id' $workflow_metadata)
-workflow_id=$(jq -r ‘.workflow[]’ $workflow_metadata)
+workflow_id=$(jq -r '.workflow[]' $workflow_metadata)
 echo "printing workflowID" 
 echo $workflow_id
 
