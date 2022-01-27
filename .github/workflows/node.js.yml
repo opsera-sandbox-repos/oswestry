@@ -12,6 +12,7 @@ on:
 
 jobs:
   build:
+    name: Build Nodejs Application
     env:    
       JOBENV: build-e1
       
@@ -32,8 +33,8 @@ jobs:
     - run: npm install
     - run: npm test
   
-  sonarQubeTrigger:
-    name: SonarQube Trigger
+  sonarScan:
+    name: SonarQube Scan
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -43,6 +44,11 @@ jobs:
         host: ${{ secrets.SONARQUBE_HOST }}
         login: ${{ secrets.SONARQUBE_TOKEN }}
         on: push
- 
 
-
+  sonarResults:
+    name: Fetching Sonar Results
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run : sudo chmod 777 ./scripts/sonar-results.sh 
+    - run: ./scripts/sonar-results.sh
