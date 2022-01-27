@@ -5,8 +5,8 @@ sonarResult=$(curl -v -H "Content-Type: application/json" -u "9b55f230d43dae27f6
 echo "printing results..." 
 echo $sonarResult
 
-workflow_metadata=$(curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/apat35/oswestry/actions/workflows/sonarResults.yml)
-echo "workflow_metadata"
+# workflow_metadata=$(curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/apat35/oswestry/actions/workflows/sonarResults.yml)
+# echo "workflow_metadata"
 
 # echo "appending metadata"
 # # User can make a REST API call to Github to fetch the workflow metadata
