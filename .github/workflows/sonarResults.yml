@@ -14,4 +14,4 @@ jobs:
     name: SonarQube Trigger
     runs-on: ubuntu-latest
     steps:
-    - run: ../scripts/sonar-results.sh
+    - run: .../scripts/sonar-results.sh
