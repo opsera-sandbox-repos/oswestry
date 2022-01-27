@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "printing run ID 
+echo "printing run ID"
 echo $1
 run_id: $1
 echo $run_id
