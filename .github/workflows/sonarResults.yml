@@ -24,7 +24,7 @@ jobs:
 #     - run: jq '.workflow_metadata.run_id' ${{ github.workspace }}/data/output.json
     - name: replacing  
       run: |
-        cat ${{ github.workspace }}/data/output.json | jq --arg run_id "${{ github.run_id }}" | '(.workflow_metadata.run_id |= $run_id)'
+        cat ${{ github.workspace }}/data/output.json | jq --arg run_id "${{ github.run_id }}" | '(.workflow_metadata.run_id) |= $run_id'
     - run: cat ${{ github.workspace }}/data/output.json
 
         
