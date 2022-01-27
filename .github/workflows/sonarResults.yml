@@ -17,9 +17,19 @@ jobs:
     - uses: actions/checkout@v2
 #     - run : sudo chmod 777 ./scripts/metadata.sh 
 #     - run: ./scripts/metadata.sh
-    - run: echo ${{ github.run_id }}
-    - run: cat ${{ github.workspace }}/data/output.json
-    - run: jq '.workflow_metadata.run_id' ${{ github.workspace }}/data/output.json
-    - run: jq '.workflow_metadata.run_id=${{ github.run_id }}' < ${{ github.workspace }}/data/output.json
-    - run: jq '.workflow_metadata.run_id' ${{ github.workspace }}/data/output.json
+#     - run: echo ${{ github.run_id }}
+#     - run: cat ${{ github.workspace }}/data/output.json
+#     - run: jq '.workflow_metadata.run_id' ${{ github.workspace }}/data/output.json
+#     - run: jq '.workflow_metadata.run_id=${{ github.run_id }}' < ${{ github.workspace }}/data/output.json
+#     - run: jq '.workflow_metadata.run_id' ${{ github.workspace }}/data/output.json
+    - name: replacing  
+      run: |
+        echo ${{ github.run_id }} \ 
+        echo "existing field" \
+        cat ${{ github.workspace }}/data/output.json \ 
+        echo "replace in progress" \
+        jq '.workflow_metadata.run_id=${{ github.run_id }}' < ${{ github.workspace }}/data/output.json
+        echo "value after replacing" 
+        cat ${{ github.workspace }}/data/output.json
+        
         
