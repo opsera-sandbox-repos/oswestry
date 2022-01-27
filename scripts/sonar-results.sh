@@ -8,4 +8,4 @@
 #         -url "https://sqprod.opsera.io/api/measures/component?component=oswestry&metricKeys=bugs,vulnerabilities,security_hotspots"
 
 # curl -v -H "Content-Type: application/json" -H "Authorization: Bearer 9b55f230d43dae27f6965acbb9ff622f70f3baed" --request GET "https://sqprod.opsera.io/api/measures/component?component=oswestry&metricKeys=new_bugs,new_vulnerabilities,new_security_hotspots"
-curl -v -H "Content-Type: application/json" -u "9b55f230d43dae27f6965acbb9ff622f70f3baed":"https://sqprod.opsera.io/" "https://sqprod.opsera.io/api/measures/component?component=oswestry&metricKeys=new_bugs,new_vulnerabilities,new_security_hotspots"
+curl -v -H "Content-Type: application/json" -u "9b55f230d43dae27f6965acbb9ff622f70f3baed": "https://sqprod.opsera.io/api/measures/component?component=oswestry&metricKeys=new_bugs,new_vulnerabilities,new_security_hotspots" --request GET "https://sqprod.opsera.io/api/measures/component?component=oswestry&metricKeys=new_bugs,new_vulnerabilities,new_security_hotspots"
