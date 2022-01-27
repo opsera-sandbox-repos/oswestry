@@ -20,6 +20,6 @@ jobs:
     - run: echo ${{ github.run_id }}
     - run: cat ${{ github.workspace }}/data/output.json
     - run: jq '.workflow_metadata.run_id' ${{ github.workspace }}/data/output.json
-    - run: cat ${{ github.workspace }}/data/output.json | jq '.workflow_metadata.run_id=${{ github.run_id }}' 
+    - run: jq '.workflow_metadata.run_id=${{ github.run_id }}' < ${{ github.workspace }}/data/output.json
     - run: jq '.workflow_metadata.run_id' ${{ github.workspace }}/data/output.json
         
