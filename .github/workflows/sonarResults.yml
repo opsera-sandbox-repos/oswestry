@@ -28,7 +28,7 @@ jobs:
         echo "existing field" \
         cat ${{ github.workspace }}/data/output.json \ 
         echo "replace in progress" \
-        jq '.workflow_metadata.run_id=${{ github.run_id }}' < ${{ github.workspace }}/data/output.json
+        jq {'.workflow_metadata.run_id=${{ github.run_id }}'} < ${{ github.workspace }}/data/output.json
         echo "value after replacing" 
         cat ${{ github.workspace }}/data/output.json
         
