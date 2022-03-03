@@ -1,8 +1,12 @@
 {
-  "workflow_metadata":{
-    "workflow_id" : 2354153, 
-    "run_id" : 12516326, 
-    "run_attempt" : 5, 
-    "job_id" : 1513256
+  "central_data":{
+    "application_id": "1090304346",
+    "application_vp_level2": "Heinrick Burkes",
+    "application_vp_level1": "Danielle Broomhead",
+    "application_name": "oswestry",
+    "application_director": "Matt Preston",
+    "application_svp": "Simon Drew",
+    "application_director_email": "simon.drew@opsera.io",
+    "application_life_cycle_stage": "STAGE"
   }
 }
