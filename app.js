@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-app.set('port', 3000);
+app.set('port', 3010);
 
 app.get('/', (req, res) => {
   res.send('Node API is up and running on port 3000...\n');
