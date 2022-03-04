@@ -9,4 +9,5 @@ app.get('/', (req, res) => {
 
 var server = app.listen(app.get('port'), function () {
   var port = server.address().port;
-  console.log("api on port" + port)}
+  console.log("api on port" + port);
+})
