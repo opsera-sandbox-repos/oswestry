@@ -48,11 +48,11 @@ jobs:
         # retention-days: 5
 
     - name: Upload artifact2
-        uses: actions/upload-artifact@v3 
-        with:
-          name: artifact2
-          path: artifact2
-          if-no-files-found: error
+      uses: actions/upload-artifact@v3 
+      with:
+        name: artifact2
+        path: artifact2
+        if-no-files-found: error
           # retention-days: 5
 
   scrapper: 
