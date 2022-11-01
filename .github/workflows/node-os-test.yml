@@ -22,8 +22,8 @@ jobs:
 
     steps:
     - name: Build artifacts
-        run: |
-          echo "foo" > artifact1
+      run: |
+        echo "foo" > artifact1
 
     # - uses: actions/checkout@v2
     # - name: Use Node.js ${{ matrix.node-version }}
@@ -62,4 +62,4 @@ jobs:
     with:
       base64-subjects: "${{ needs.build.outputs.hashes }}"
       # Upload provenance to a new release
-      upload-assets: true
+      # upload-assets: true
