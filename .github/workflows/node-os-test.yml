@@ -74,6 +74,6 @@ jobs:
       contents: write
     uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.2.1
     with:
-      compile-generator: true
+      # compile-generator: true
       base64-subjects: "${{ needs.build.outputs.hashes }}"
       upload-assets: true
