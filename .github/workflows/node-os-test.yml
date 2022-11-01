@@ -11,7 +11,8 @@ on:
 
 jobs:
   build:
-  
+    outputs:
+      hashes: ${{ steps.hash.outputs.hashes }}
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,15 +21,25 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - name: Build artifacts
+        run: |
+          echo "foo" > artifact1
+
+    # - uses: actions/checkout@v2
+    # - name: Use Node.js ${{ matrix.node-version }}
+    #   uses: actions/setup-node@v2
+    #   with:
+    #     node-version: ${{ matrix.node-version }}
+    #     cache: 'npm'
+    # - run: npm ci
+    # - run: npm run build --if-present
+    # - run: npm test
+
+    - name: Generate hashes
+      shell: bash
+      id: hash
+      run: |
+        echo "hashes=$(sha256sum artifact1 | base64 -w0)" >> "$GITHUB_OUTPUT"
 
   scrapper: 
     runs-on: ubuntu-latest
@@ -39,3 +50,16 @@ jobs:
         ref: ${{ github.head_ref }} 
     - name: trufflehog-actions-scan
       uses: edplato/trufflehog-actions-scan@master
+
+
+  provenance:
+    needs: [build]
+    permissions:
+      actions: read
+      id-token: write
+      contents: write
+    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.2.1
+    with:
+      base64-subjects: "${{ needs.build.outputs.hashes }}"
+      # Upload provenance to a new release
+      upload-assets: true
