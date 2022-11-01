@@ -21,25 +21,23 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    - uses: actions/checkout@v2
     - name: Build artifacts
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
       run: |
-        echo "foo" > artifact1
-
-    # - uses: actions/checkout@v2
-    # - name: Use Node.js ${{ matrix.node-version }}
-    #   uses: actions/setup-node@v2
-    #   with:
-    #     node-version: ${{ matrix.node-version }}
-    #     cache: 'npm'
-    # - run: npm ci
-    # - run: npm run build --if-present
-    # - run: npm test
+        echo "foo" > artifact1 
+        npm ci 
+        npm run build --if-present > artifact2 
+        npm test
 
     - name: Generate hashes
       shell: bash
       id: hash
       run: |
-        echo "hashes=$(sha256sum artifact1 | base64 -w0)" >> "$GITHUB_OUTPUT"
+        echo "hashes=$(sha256sum artifact1 artifact2 | base64 -w0)" >> "$GITHUB_OUTPUT"
 
   scrapper: 
     runs-on: ubuntu-latest
