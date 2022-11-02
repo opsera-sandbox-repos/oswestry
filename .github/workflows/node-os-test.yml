@@ -32,12 +32,14 @@ jobs:
         npm ci 
         npm run build --if-present > artifact2 
         npm test
+    
+    - uses: btmc/github-action-docker-build@v1 > artifact3
 
     - name: Generate hashes
       shell: bash
       id: hash
       run: |
-        echo "hashes=$(sha256sum artifact1 artifact2 | base64 -w0)" >> "$GITHUB_OUTPUT"
+        echo "hashes=$(sha256sum artifact1 artifact2 artifact3 | base64 -w0)" >> "$GITHUB_OUTPUT"
 
     - name: Upload artifact1
       uses: actions/upload-artifact@v3 
@@ -52,6 +54,13 @@ jobs:
       with:
         name: artifact2
         path: artifact2
+        if-no-files-found: error
+          # retention-days: 5
+    - name: Upload artifact2
+      uses: actions/upload-artifact@v3 
+      with:
+        name: artifact3
+        path: artifact3
         if-no-files-found: error
           # retention-days: 5
 
