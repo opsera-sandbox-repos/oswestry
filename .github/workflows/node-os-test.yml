@@ -25,7 +25,7 @@ jobs:
     - name: Build artifacts
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: ${{ matrix.node-version 
         cache: 'npm'
     - run: |
         echo "foo" > artifact1 
