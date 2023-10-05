@@ -1,0 +1,29 @@
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code, and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: sonarResults
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:  
+  sonarQubeTrigger:
+    name: SonarQube Trigger
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run : sudo chmod 777 ./scripts/sonar-results.sh 
+    - run: ./scripts/sonar-results.sh $GITHUB_RUN_ID $GITHUB_WORKFLOW $GITHUB_JOB $GITHUB_RUN_ATTEMPT $GITHUB_RUN_NUMBER $GITHUB_ACTION
+#     - run : sudo chmod 777 ./scripts/metadata.sh 
+#     - run: ./scripts/metadata.sh 
+
+#       env: 
+#         run_id: ${{ github.run_id }} 
+    
+      
+
+        
+      

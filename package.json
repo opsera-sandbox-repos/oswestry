@@ -1,0 +1,22 @@
+{
+  "name": "oswestry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apat35/oswestry.git"
+  },
+  "author": "apat35",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apat35/oswestry/issues"
+  },
+  "homepage": "https://github.com/apat35/oswestry#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
