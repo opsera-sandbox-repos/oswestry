@@ -13,3 +13,4 @@ var server = app.listen(app.get('port'), function () {
 })
 
 console.log("api is running on port");
+console.log("prepareing code");
