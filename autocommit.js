@@ -17,4 +17,4 @@ const runEvery5Mins = () => {
 }
 setInterval(()=>{
     runEvery5Mins();
-},60000)
+},60000*5)
