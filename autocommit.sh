@@ -12,4 +12,5 @@ echo "$new_line" >> "$file_path"
 # Git commands to stage and commit changes
 git add "$file_path"
 git commit -m "DT-$2 Automated Commit $1"
+git pull
 git push
