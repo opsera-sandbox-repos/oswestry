@@ -16,8 +16,6 @@ console.log("adding a new line to generate more prod data")
 console.log("adding a new line to generate more prod data")
 console.log("adding new data for clickhouse")
 console.log("new data for multiple stages")
-console.log("new data line ");
-console.log("asfag);
 console.log("adding new data for clickhouse")
 console.log("new data for multiple stages")
 console.log("new data line ");
