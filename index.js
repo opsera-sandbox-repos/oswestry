@@ -23,3 +23,8 @@ console.log("adding new data for clickhouse")
 console.log("new data for multiple stages")
 console.log("new data line ");
 console.log("new data for test ");
+
+console.log("adding new data for clickhouse")
+console.log("new data for multiple stages")
+console.log("new data line ");
+console.log("new data for test ");
