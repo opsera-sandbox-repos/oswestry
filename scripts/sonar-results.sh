@@ -16,4 +16,4 @@ echo $metadata
 sonarResult+=",{"metaData":$metadata}"
 echo "printing results after appending metadata" 
 echo $sonarResult
-echo "scrapping"
+echo "scrapping trial 2"
