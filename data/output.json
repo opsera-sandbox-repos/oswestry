@@ -7,6 +7,7 @@
     "Application_Director": "Matt Preston",
     "Application_SVP": "Simon Drew",
     "Application_Director_Email": "simon.drew@opsera.io",
-    "Application_Life_Cycle_Stage": "STAGE"
+    "Application_Life_Cycle_Stage": "STAGE",
+    "App" : "app",
   }
 }
